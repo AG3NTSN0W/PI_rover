@@ -1,0 +1,19 @@
+version: "2.2"
+services:
+  rover-server:
+    build: ./rover-server
+    image: rover-server:latest
+    container_name: rover-server
+    privileged: true 
+    environment:
+     SECRET: ${SECRET}  
+    ports:
+      - "8765:8765"
+      - "8865:8865" 
+      - "8860:8860"
+  rover-ui:
+    build: ./rover-ui
+    image: rover-ui:latest
+    container_name: rover-ui
+    ports:
+      - "4200:80"

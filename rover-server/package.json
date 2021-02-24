@@ -1,0 +1,17 @@
+{
+  "name": "testpca9685",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "J_F",
+  "license": "ISC",
+  "dependencies": {
+    "i2c-bus": "^5.2.1",
+    "pca9685": "^4.0.3",
+    "websocket": "^1.0.33",
+    "ws": "^7.4.3"
+  }
+}
