@@ -1,0 +1,17 @@
+<div *ngIf="keyPressed">
+
+  <p [ngClass]="{'minMaxPosition': xMinMaxPosition, 'position': !xMinMaxPosition}">
+    X: {{keyPressed['x']}}
+  </p>
+  <p [ngClass]="{'minMaxPosition': yMinMaxPosition, 'position': !yMinMaxPosition}">
+    Y: {{keyPressed['y']}}
+
+  </p>
+
+
+</div>
+
+
+<div class="stream">  
+  <canvas id="video-canvas"></canvas>
+</div>

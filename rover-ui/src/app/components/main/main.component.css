@@ -1,0 +1,13 @@
+.stream {
+    display: flex;
+    justify-content: center;
+    overflow: unset;
+}
+
+.minMaxPosition {
+    color: red;
+}
+
+.position {
+    color: green;
+}
