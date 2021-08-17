@@ -1,11 +1,10 @@
 # Stage 0: compile angular frontend
-FROM node:latest as build
+FROM node:14 as build
 WORKDIR /app
 COPY . . 
 RUN npm install
 RUN npm run build
 
-RUN ls -tt /app/
 # Stage 1: serve app with nginx server
 FROM nginx:latest
 COPY --from=build /app/dist/rover-ui  /usr/share/nginx/html

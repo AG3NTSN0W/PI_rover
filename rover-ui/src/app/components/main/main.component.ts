@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { fromEvent, interval, Subscription } from 'rxjs';
-import { filter, map, throttle } from 'rxjs/operators';
+import { filter, map, tap, throttle } from 'rxjs/operators';
 import JSMpeg from '@cycjimmy/jsmpeg-player';
 
 import { WebSocketService } from '../../core/webSocket/web-socket.service'

@@ -9,7 +9,7 @@ import { environment } from '../../../environments/environment';
 
 const WS_ENDPOINT = environment.wsEndpoint;
 
-const subject: Subject<webMessage> = <Subject<webMessage>>webSocket(WS_ENDPOINT);
+const subject: Subject<string> = <Subject<string>>webSocket(WS_ENDPOINT);
 
 @Injectable({
   providedIn: 'root'
@@ -19,11 +19,11 @@ export class WebSocketService {
   constructor() {
   }
 
-  public connect(): Observable<webMessage> {
+  public connect(): Observable<string> {
     return this.webSocketSetup()
   }
 
-  private webSocketSetup(): Observable<webMessage> {
+  private webSocketSetup(): Observable<string> {
     const messages = subject.pipe(
       retryWhen(errors =>
         errors.pipe(
@@ -43,7 +43,7 @@ export class WebSocketService {
     return messages;
   }
 
-  public sendMessage(flowMessage: webMessage): void {
+  public sendMessage(flowMessage: string): void {
     subject.next(flowMessage);
   }
 
